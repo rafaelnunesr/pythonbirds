@@ -94,3 +94,59 @@ Exemplo:
 
 
 '''
+
+class Carro:
+    @classmethod
+    def __init__(clss, direcao='direcao', motor='motor'):
+        Carro = Motor(), Direcao()
+
+
+class Motor:
+    def __init__(self, velocidade=0):
+        self.velocidade = velocidade
+
+    def acerelar(self):
+         self.velocidade += 1
+
+    def freiar(self):
+        if (self.velocidade - 2) < 0:
+            self.velocidade = 0
+        else:
+            self.velocidade -= 2
+    @property
+    def calcular_velocidade(self):
+        return self.velocidade
+
+
+class Direcao:
+
+    def __init__(self, pos_atual='Norte'):
+        self.pos_atual = pos_atual
+
+    def girar_a_direita(self):
+        if self.pos_atual == 'Norte':
+            self.pos_atual = 'Leste'
+        elif self.pos_atual == 'Leste':
+            self.pos_atual = 'Sul'
+        elif self.pos_atual == 'Sul':
+            self.pos_atual = 'Oeste'
+        else:
+            self.pos_atual = 'Norte'
+
+    def girar_a_esquerda(self):
+        if self.pos_atual == 'Norte':
+            self.pos_atual = 'Oeste'
+        elif self.pos_atual == 'Oeste':
+            self.pos_atual = 'Sul'
+        elif self.pos_atual == 'Sul':
+            self.pos_atual = 'Leste'
+        else:
+            self.pos_atual = 'Norte'
+
+    @property
+    def valor(self):
+        return self.pos_atual
+
+
+
+
