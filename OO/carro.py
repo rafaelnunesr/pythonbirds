@@ -92,4 +92,5 @@ Exemplo:
 >>>carro.calcular_direcao()
 'Oeste' #informacao pegada da direcao
 
+
 '''
